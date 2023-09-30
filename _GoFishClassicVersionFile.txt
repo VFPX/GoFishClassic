@@ -99,7 +99,7 @@ GoFish Change Log
 EndText
 
 AddProperty(toUpdateInfo, 'AvailableVersion', 'GoFishClassic - 5.2.001 - September 24, 2023 - 20230924')
-AddProperty(toUpdateInfo, 'SourceFileUrl', 'https://raw.githubusercontent.com/VFPX/GoFishClassic/master/Source/Source.zip')
+* 	AddProperty(toUpdateInfo, 'SourceFileUrl', 'https://raw.githubusercontent.com/VFPX/GoFishClassic/master/Source/Source.zip')
 AddProperty(toUpdateInfo, 'LinkPrompt', 'GoFish Home Page')
 AddProperty(toUpdateInfo, 'Link', 'https://github.com/VFPX/GoFishClassic')
 AddProperty(toUpdateInfo, 'Notes', lcNote)
