@@ -6,7 +6,7 @@ Project manager: Jim Nelson
 
 ## Documentation
 
-See the [documentation](docs/documentation.md) for details on using GoFish Classic.
+See the [documentation](docs/documentation.md) for details on using GoFish Classic.  (Well, not yet )
 
 ## Releases
 
