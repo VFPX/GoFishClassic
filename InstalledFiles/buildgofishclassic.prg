@@ -24,7 +24,7 @@ lcBuild = '01' && <---- Set your desired version level of the tool here
 lcApplicationName	= 'GoFishClassic'
 lcVersionLocalFile	= 'GoFishClassicVersionFile.txt'
 lcVersionFileURL	= 'https://github.com/VFPX/GoFishClassic/_GoFishClassicVersionFile.txt'
-lcDownloadUrl		= 'https://raw.githubusercontent.com/VFPX/GoFishClassic/master/Source/Source.zip'
+lcDownloadUrl		= 'https://raw.githubusercontent.com/VFPX/GoFishClassic/master/InstalledFiles.zip'
 lcGoFishHomePage	= 'https://github.com/VFPX/GoFishClassic'
 
 * This will appear as: '5.X.YYY' on the form, and in the cVersion property on the GoFishSeaerch Engine class
