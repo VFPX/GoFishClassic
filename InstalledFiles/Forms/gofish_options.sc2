@@ -111,59 +111,6 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 	*< OBJECTDATA: ObjPath="pfSettings.Page2.Label1" UniqueID="" Timestamp="" />
 	*< OBJECTDATA: ObjPath="pfSettings.Page2.Spinner2" UniqueID="" Timestamp="" />
 	*< OBJECTDATA: ObjPath="pfSettings.Page2.Label3" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container1.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label2" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command2" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container2" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container2.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label3" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command3" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container3" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container3.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label4" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command4" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container4" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container4.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label5" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command5" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container5" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container5.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label6" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command6" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container6" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container6.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label7" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command7" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container7" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container7.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label8" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command8" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container8" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container8.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label9" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command9" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container9" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container9.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label10" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command10" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container10" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container10.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label11" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command11" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container11" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container11.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label12" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command12" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container12" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container12.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Label13" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Command13" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container13" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageColours.Container13.lblExample1" UniqueID="" Timestamp="" />
-	*< OBJECTDATA: ObjPath="pfSettings.pageReferences.Label9" UniqueID="" Timestamp="" />
 	*< OBJECTDATA: ObjPath="cmdOK" UniqueID="" Timestamp="" />
 	*< OBJECTDATA: ObjPath="cmdCancel" UniqueID="" Timestamp="" />
 	*< OBJECTDATA: ObjPath="Gf_versionlabel1" UniqueID="" Timestamp="" />
@@ -207,7 +154,7 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 		DoCreate = .T.
 		Height = 600
 		KeyPreview = .T.
-		Left = -1
+		Left = 0
 		lrestoreprevioussearchresultsonstartup = .F.
 		lreturn = .F.
 		lsavesearchresults = .T.
@@ -291,10 +238,10 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 		ActivePage = 1, ;
 		Anchor = 15, ;
 		ErasePage = .T., ;
-		Height = 555, ;
+		Height = 528, ;
 		Left = 10, ;
 		Name = "pfSettings", ;
-		PageCount = 10, ;
+		PageCount = 8, ;
 		TabStretch = 0, ;
 		TabStyle = 1, ;
 		Top = 18, ;
@@ -322,14 +269,7 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 		Page7.PageOrder = 7, ;
 		Page8.Caption = "Janitor", ;
 		Page8.Name = "Page2", ;
-		Page8.PageOrder = 8, ;
-		Page9.Caption = "Colours", ;
-		Page9.Name = "pageColours", ;
-		Page9.PageOrder = 9, ;
-		Page10.Caption = "CodeReferences", ;
-		Page10.Enabled = .F., ;
-		Page10.Name = "pageReferences", ;
-		Page10.PageOrder = 10
+		Page8.PageOrder = 8
 		*< END OBJECT: BaseClass="pageframe" />
 
 	ADD OBJECT 'pfSettings.Page1.Image1' AS image WITH ;
@@ -480,6 +420,7 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 		Name = "chk_CRLocal", ;
 		TabIndex = 7, ;
 		Top = 307, ;
+		Visible = .F., ;
 		Width = 466, ;
 		WordWrap = .T.
 		*< END OBJECT: BaseClass="checkbox" />
@@ -494,6 +435,7 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 		Name = "chk_CRLocal_Default", ;
 		TabIndex = 7, ;
 		Top = 291, ;
+		Visible = .F., ;
 		Width = 466, ;
 		WordWrap = .T.
 		*< END OBJECT: BaseClass="checkbox" />
@@ -507,6 +449,7 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 		Name = "chk_CRMode", ;
 		TabIndex = 7, ;
 		Top = 271, ;
+		Visible = .F., ;
 		Width = 466, ;
 		WordWrap = .T.
 		*< END OBJECT: BaseClass="checkbox" />
@@ -704,6 +647,7 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 		Name = "Text1", ;
 		ReadOnly = .T., ;
 		Top = 342, ;
+		Visible = .F., ;
 		Width = 394
 		*< END OBJECT: BaseClass="textbox" />
 
@@ -787,647 +731,6 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 		Top = 248, ;
 		Width = 596, ;
 		WordWrap = .T.
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command1' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command1", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 2, ;
-		ToolTipText = "Pick colour", ;
-		Top = 30, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command10' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command10", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 29, ;
-		ToolTipText = "Pick colour", ;
-		Top = 300, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command11' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command11", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 32, ;
-		ToolTipText = "Pick colour", ;
-		Top = 330, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command12' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command12", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 35, ;
-		ToolTipText = "Pick colour", ;
-		Top = 360, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command13' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command13", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 38, ;
-		ToolTipText = "Pick colour", ;
-		Top = 390, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command2' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command2", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 5, ;
-		ToolTipText = "Pick colour", ;
-		Top = 60, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command3' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command3", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 8, ;
-		ToolTipText = "Pick colour", ;
-		Top = 90, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command4' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command4", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 11, ;
-		ToolTipText = "Pick colour", ;
-		Top = 120, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command5' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command5", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 14, ;
-		ToolTipText = "Pick colour", ;
-		Top = 150, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command6' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command6", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 17, ;
-		ToolTipText = "Pick colour", ;
-		Top = 180, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command7' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command7", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 20, ;
-		ToolTipText = "Pick colour", ;
-		Top = 210, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command8' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command8", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 23, ;
-		ToolTipText = "Pick colour", ;
-		Top = 240, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Command9' AS commandbutton WITH ;
-		Caption = ". . .", ;
-		FontBold = .T., ;
-		Height = 25, ;
-		Left = 250, ;
-		Name = "Command9", ;
-		Picture = ..\..\2015-10-25 beta jrn\images\browsefolder.bmp, ;
-		SpecialEffect = 0, ;
-		TabIndex = 26, ;
-		ToolTipText = "Pick colour", ;
-		Top = 270, ;
-		Width = 25
-		*< END OBJECT: BaseClass="commandbutton" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container1' AS container WITH ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container1", ;
-		Picture = ..\images\, ;
-		TabIndex = 3, ;
-		Top = 30, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container1.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container10' AS container WITH ;
-		BackColor = 255,255,255, ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container10", ;
-		Picture = ..\images\, ;
-		TabIndex = 30, ;
-		Top = 300, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container10.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container11' AS container WITH ;
-		BackColor = 255,255,255, ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container11", ;
-		Picture = ..\images\, ;
-		TabIndex = 33, ;
-		Top = 330, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container11.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container12' AS container WITH ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container12", ;
-		Picture = ..\images\, ;
-		TabIndex = 36, ;
-		Top = 360, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container12.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container13' AS container WITH ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container13", ;
-		Picture = ..\images\, ;
-		TabIndex = 39, ;
-		Top = 390, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container13.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container2' AS container WITH ;
-		BackColor = 255,255,255, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container2", ;
-		Picture = ..\images\, ;
-		TabIndex = 6, ;
-		Top = 60, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container2.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container3' AS container WITH ;
-		BackColor = 255,255,255, ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container3", ;
-		Picture = ..\images\, ;
-		TabIndex = 9, ;
-		Top = 90, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container3.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container4' AS container WITH ;
-		BackColor = 255,255,255, ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container4", ;
-		Picture = ..\images\, ;
-		TabIndex = 12, ;
-		Top = 120, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container4.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container5' AS container WITH ;
-		BackColor = 255,255,255, ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container5", ;
-		Picture = ..\images\, ;
-		TabIndex = 15, ;
-		Top = 150, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container5.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container6' AS container WITH ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container6", ;
-		Picture = ..\images\, ;
-		TabIndex = 18, ;
-		Top = 180, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container6.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container7' AS container WITH ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container7", ;
-		Picture = ..\images\, ;
-		TabIndex = 21, ;
-		Top = 210, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container7.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container8' AS container WITH ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container8", ;
-		Picture = ..\images\, ;
-		TabIndex = 24, ;
-		Top = 240, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container8.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container9' AS container WITH ;
-		BackStyle = 1, ;
-		BorderWidth = 2, ;
-		Height = 27, ;
-		Left = 306, ;
-		Name = "Container9", ;
-		Picture = ..\images\, ;
-		TabIndex = 27, ;
-		Top = 270, ;
-		Width = 129
-		*< END OBJECT: BaseClass="container" />
-
-	ADD OBJECT 'pfSettings.pageColours.Container9.lblExample1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Example", ;
-		Height = 17, ;
-		Left = 8, ;
-		Name = "lblExample1", ;
-		TabIndex = 1, ;
-		ToolTipText = "Highlighting several frames.", ;
-		Top = 6, ;
-		Width = 120
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label1' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = "Frame colour", ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label1", ;
-		TabIndex = 1, ;
-		Top = 30, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label10' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'Tree fore colour "Search"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label10", ;
-		TabIndex = 28, ;
-		Top = 303, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label11' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'Tree fore colour "Update"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label11", ;
-		TabIndex = 31, ;
-		Top = 330, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label12' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'CSS back colour "tr even"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label12", ;
-		TabIndex = 34, ;
-		Top = 360, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label13' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'CSS back colour "tr odd"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label13", ;
-		TabIndex = 37, ;
-		Top = 390, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label2' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'Grid fore colour "SCX"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label2", ;
-		TabIndex = 4, ;
-		Top = 60, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label3' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'Grid fore colour "VCX"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label3", ;
-		TabIndex = 7, ;
-		Top = 90, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label4' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'Grid fore colour "PRG"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label4", ;
-		TabIndex = 10, ;
-		Top = 120, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label5' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'Grid fore colour "other"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label5", ;
-		TabIndex = 13, ;
-		Top = 150, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label6' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'Grid back colour "Replaced"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label6", ;
-		TabIndex = 16, ;
-		Top = 181, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label7' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'Grid back colour "Exceed replace risk"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label7", ;
-		TabIndex = 19, ;
-		Top = 210, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label8' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'Grid back colour "Replace risk 2"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label8", ;
-		TabIndex = 22, ;
-		Top = 240, ;
-		Width = 220
-		*< END OBJECT: BaseClass="label" />
-
-	ADD OBJECT 'pfSettings.pageColours.Label9' AS label WITH ;
-		BackStyle = 0, ;
-		Caption = 'Grid back colour "Replace risk 3"', ;
-		Height = 17, ;
-		Left = 21, ;
-		Name = "Label9", ;
-		TabIndex = 25, ;
-		Top = 270, ;
-		Width = 220
 		*< END OBJECT: BaseClass="label" />
 
 	ADD OBJECT 'pfSettings.pageColumns.cmdClearAll' AS commandbutton WITH ;
@@ -1865,22 +1168,6 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 		Width = 59
 		*< END OBJECT: BaseClass="textbox" />
 
-	ADD OBJECT 'pfSettings.pageReferences.Label9' AS label WITH ;
-		Alignment = 2, ;
-		Anchor = 10, ;
-		BackStyle = 0, ;
-		Caption = "********************     Not active    ********************", ;
-		FontBold = .T., ;
-		ForeColor = 255,0,0, ;
-		Left = 15, ;
-		Name = "Label9", ;
-		TabIndex = 13, ;
-		Top = 224, ;
-		Visible = .F., ;
-		Width = 596, ;
-		WordWrap = .T.
-		*< END OBJECT: BaseClass="label" />
-
 	ADD OBJECT 'pfSettings.pageReplace.Check1' AS checkbox WITH ;
 		Alignment = 0, ;
 		AutoSize = .T., ;
@@ -2274,46 +1561,47 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 		
 		Thisform.nReplaceRisk = Evl(Thisform.oForm.nReplaceRisk, 1)
 		
-		*SF 20221015
-		* --- set colours used for showing informations ---
+		*!* ******** JRN Removed 2024-01-05 ********
+		*!* *SF 20221015
+		*!* * --- set colours used for showing informations ---
 		
-		*.<<@N>>.BORDERWIDTH = 0
-		This.pfSettings.pageColours.Container2.BorderWidth  = 0
-		This.pfSettings.pageColours.Container3.BorderWidth  = 0
-		This.pfSettings.pageColours.Container4.BorderWidth  = 0
-		This.pfSettings.pageColours.Container5.BorderWidth  = 0
-		This.pfSettings.pageColours.Container6.BorderWidth  = 0
-		This.pfSettings.pageColours.Container7.BorderWidth  = 0
-		This.pfSettings.pageColours.Container8.BorderWidth  = 0
-		This.pfSettings.pageColours.Container9.BorderWidth  = 0
-		This.pfSettings.pageColours.Container10.BorderWidth = 0
-		This.pfSettings.pageColours.Container11.BorderWidth = 0
-		This.pfSettings.pageColours.Container12.BorderWidth = 0
-		This.pfSettings.pageColours.Container13.BorderWidth = 0
+		*!* *.<<@N>>.BORDERWIDTH = 0
+		*!* This.pfSettings.pageColours.Container2.BorderWidth  = 0
+		*!* This.pfSettings.pageColours.Container3.BorderWidth  = 0
+		*!* This.pfSettings.pageColours.Container4.BorderWidth  = 0
+		*!* This.pfSettings.pageColours.Container5.BorderWidth  = 0
+		*!* This.pfSettings.pageColours.Container6.BorderWidth  = 0
+		*!* This.pfSettings.pageColours.Container7.BorderWidth  = 0
+		*!* This.pfSettings.pageColours.Container8.BorderWidth  = 0
+		*!* This.pfSettings.pageColours.Container9.BorderWidth  = 0
+		*!* This.pfSettings.pageColours.Container10.BorderWidth = 0
+		*!* This.pfSettings.pageColours.Container11.BorderWidth = 0
+		*!* This.pfSettings.pageColours.Container12.BorderWidth = 0
+		*!* This.pfSettings.pageColours.Container13.BorderWidth = 0
 		
-		This.pfSettings.pageColours.Container1.BorderColor            = Thisform.oForm.nContainerFrameColour
-		This.pfSettings.pageColours.Container2.lblExample1.ForeColor  = Thisform.oForm.nFileSCXDynamicForeColour
-		This.pfSettings.pageColours.Container3.lblExample1.ForeColor  = Thisform.oForm.nFileVCXDynamicForeColour
-		This.pfSettings.pageColours.Container4.lblExample1.ForeColor  = Thisform.oForm.nFilePRGDynamicForeColour
-		This.pfSettings.pageColours.Container5.lblExample1.ForeColor  = Thisform.oForm.nFileDefaultDynamicForeColour
-		This.pfSettings.pageColours.Container6.BackColor              = Thisform.oForm.nReplacedDynamicBackColour
-		This.pfSettings.pageColours.Container7.BackColor              = Thisform.oForm.nRiskExceededDynamicBackColour
-		This.pfSettings.pageColours.Container8.BackColor              = Thisform.oForm.nRisk2DynamicBackColour
-		This.pfSettings.pageColours.Container9.BackColor              = Thisform.oForm.nRisk3DynamicBackColour
-		This.pfSettings.pageColours.Container10.lblExample1.ForeColor = Thisform.oForm.nTreeSearchColour
-		This.pfSettings.pageColours.Container11.lblExample1.ForeColor = Thisform.oForm.nTreeUpdateColour
-		This.pfSettings.pageColours.Container12.BackColor             = Thisform.oForm.nCSS_tr_even_Colour
-		This.pfSettings.pageColours.Container13.BackColor             = Thisform.oForm.nCSS_tr_odd_Colour
-		*/SF 20221015
+		*!* This.pfSettings.pageColours.Container1.BorderColor            = Thisform.oForm.nContainerFrameColour
+		*!* This.pfSettings.pageColours.Container2.lblExample1.ForeColor  = Thisform.oForm.nFileSCXDynamicForeColour
+		*!* This.pfSettings.pageColours.Container3.lblExample1.ForeColor  = Thisform.oForm.nFileVCXDynamicForeColour
+		*!* This.pfSettings.pageColours.Container4.lblExample1.ForeColor  = Thisform.oForm.nFilePRGDynamicForeColour
+		*!* This.pfSettings.pageColours.Container5.lblExample1.ForeColor  = Thisform.oForm.nFileDefaultDynamicForeColour
+		*!* This.pfSettings.pageColours.Container6.BackColor              = Thisform.oForm.nReplacedDynamicBackColour
+		*!* This.pfSettings.pageColours.Container7.BackColor              = Thisform.oForm.nRiskExceededDynamicBackColour
+		*!* This.pfSettings.pageColours.Container8.BackColor              = Thisform.oForm.nRisk2DynamicBackColour
+		*!* This.pfSettings.pageColours.Container9.BackColor              = Thisform.oForm.nRisk3DynamicBackColour
+		*!* This.pfSettings.pageColours.Container10.lblExample1.ForeColor = Thisform.oForm.nTreeSearchColour
+		*!* This.pfSettings.pageColours.Container11.lblExample1.ForeColor = Thisform.oForm.nTreeUpdateColour
+		*!* This.pfSettings.pageColours.Container12.BackColor             = Thisform.oForm.nCSS_tr_even_Colour
+		*!* This.pfSettings.pageColours.Container13.BackColor             = Thisform.oForm.nCSS_tr_odd_Colour
+		*!* */SF 20221015
 		
-		*SF 20221017
-		Thisform.pfSettings.pageReferences.Enabled                   = Thisform.oForm.nFirstLoad=2
-		Thisform.pfSettings.pageAdvanced.chk_CRLocal_Default.Visible = Thisform.oForm.nFirstLoad=2
-		Thisform.pfSettings.pageAdvanced.chk_CRLocal.Visible         = Thisform.oForm.nFirstLoad=2
-		Thisform.pfSettings.pageAdvanced.cmdSetFolder.Visible        = Thisform.oForm.nFirstLoad=2 And Thisform.oForm.lCR_Local
-		Thisform.pfSettings.pageAdvanced.Text1.Visible               = Thisform.oForm.nFirstLoad=2 And Thisform.oForm.lCR_Local
+		*!* *SF 20221017
+		*!* Thisform.pfSettings.pageReferences.Enabled                   = Thisform.oForm.nFirstLoad=2
+		*!* Thisform.pfSettings.pageAdvanced.chk_CRLocal_Default.Visible = Thisform.oForm.nFirstLoad=2
+		*!* Thisform.pfSettings.pageAdvanced.chk_CRLocal.Visible         = Thisform.oForm.nFirstLoad=2
+		*!* Thisform.pfSettings.pageAdvanced.cmdSetFolder.Visible        = Thisform.oForm.nFirstLoad=2 And Thisform.oForm.lCR_Local
+		*!* Thisform.pfSettings.pageAdvanced.Text1.Visible               = Thisform.oForm.nFirstLoad=2 And Thisform.oForm.lCR_Local
 		
-		Thisform.pfSettings.pageAdvanced.Label9.Visible = Thisform.oForm.lCR_Store_Restart
+		*!* Thisform.pfSettings.pageAdvanced.Label9.Visible = Thisform.oForm.lCR_Store_Restart
 		
 		
 		Thisform.cCR_StoreLocal_Option = Evl(Thisform.oForm.cCR_StoreLocal_Option,;
@@ -2622,175 +1910,6 @@ DEFINE CLASS gf_options AS gf_baseform OF "..\lib\gofishui.vcx"
 	PROCEDURE pfSettings.pageBackups.Label2.Click
 		messagebox('No help available at this time.', 0, 'GoFish')
 		*** TODO: Shell('URL for backup help')
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command1.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nContainerFrameColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nContainerFrameColour = m.lnReturn
-			This.Parent.Container1.BorderColor   = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command10.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nTreeSearchColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nTreeSearchColour              = m.lnReturn
-			This.Parent.Container10.lblExample1.ForeColor = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command11.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nTreeUpdateColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nTreeUpdateColour              = m.lnReturn
-			This.Parent.Container11.lblExample1.ForeColor = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command12.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nCSS_tr_even_Colour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nCSS_tr_even_Colour            = m.lnReturn
-			This.Parent.Container12.lblExample1.ForeColor = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command13.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nCSS_tr_odd_Colour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nCSS_tr_odd_Colour             = m.lnReturn
-			This.Parent.Container13.lblExample1.ForeColor = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command2.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nFileSCXDynamicForeColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nFileSCXDynamicForeColour     = m.lnReturn
-			This.Parent.Container2.lblExample1.ForeColor = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command3.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nFileVCXDynamicForeColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nFileVCXDynamicForeColour     = m.lnReturn
-			This.Parent.Container3.lblExample1.ForeColor = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command4.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nFilePRGDynamicForeColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nFilePRGDynamicForeColour     = m.lnReturn
-			This.Parent.Container4.lblExample1.ForeColor = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command5.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nFileDefaultDynamicForeColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nFileDefaultDynamicForeColour = m.lnReturn
-			This.Parent.Container5.lblExample1.ForeColor = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command6.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nReplacedDynamicBackColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nReplacedDynamicBackColour = m.lnReturn
-			This.Parent.Container6.BackColor          = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command7.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nRiskExceededDynamicBackColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nRiskExceededDynamicBackColour = m.lnReturn
-			This.Parent.Container7.BackColor              = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command8.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nRisk2DynamicBackColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nRisk2DynamicBackColour = m.lnReturn
-			This.Parent.Container8.BackColor       = m.lnReturn
-		Endif &&m.lnReturn#-1
-		
-	ENDPROC
-
-	PROCEDURE pfSettings.pageColours.Command9.Click
-		Local lnReturn, lnColour
-		
-		lnColour = Thisform.oForm.nRisk3DynamicBackColour
-		lnReturn = Getcolor(m.lnColour)
-		
-		If m.lnReturn#-1 Then
-			Thisform.oForm.nRisk3DynamicBackColour = m.lnReturn
-			This.Parent.Container9.BackColor       = m.lnReturn
-		Endif &&m.lnReturn#-1
 		
 	ENDPROC
 

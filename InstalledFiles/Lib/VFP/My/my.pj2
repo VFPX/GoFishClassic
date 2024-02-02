@@ -40,14 +40,14 @@ FOR EACH loProject IN _VFP.Projects FOXOBJECT
 ENDFOR
 
 STRTOFILE( '', '__newproject.f2b' )
-BUILD PROJECT my.PJX FROM '__newproject.f2b'
+BUILD PROJECT my.pjx FROM '__newproject.f2b'
 FOR EACH loProject IN _VFP.Projects FOXOBJECT
 	loProject.Close()
 ENDFOR
 
-MODIFY PROJECT 'my.PJX' NOWAIT NOSHOW NOPROJECTHOOK
+MODIFY PROJECT 'my.pjx' NOWAIT NOSHOW NOPROJECTHOOK
 
-loProject = _VFP.Projects('my.PJX')
+loProject = _VFP.Projects('my.pjx')
 
 WITH loProject.FILES
 	.ADD('installmy.prg')		&& *< FileMetadata: Type="P" Cpid="1252" Timestamp="0" ID="0" ObjRev="544" User="" />
@@ -95,7 +95,7 @@ WITH loProject
 ENDWITH
 
 
-_VFP.Projects('my.PJX').Close()
+_VFP.Projects('my.pjx').Close()
 *ERASE '__newproject.f2b'
 CD (lcCurdir)
 RETURN

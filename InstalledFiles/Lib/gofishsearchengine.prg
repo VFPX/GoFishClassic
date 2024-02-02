@@ -191,7 +191,7 @@ Define Class GoFishSearchEngine As Custom
 		* This area contains a few overrides that I've had to build in to make final tweeks on columns
 		*=============================================================================================
 		*-- Sometimes in a VCX/SCX the MethodName will be empty and MatchLine will contain the PROCEDURE name
-		If Empty(toObject.MethodName) And Upper(GetWordNum(lcTrimmedMatchLine, 1)) = 'PROCEDURE'
+		If Empty(toObject.MethodName) And Upper(GetWordNum(lcTrimmedMatchLine, 1)) = 'PROCEDURE' and GetWordNum(lcTrimmedMatchLine, 2) # '='
 			toObject.MethodName = GetWordNum(lcTrimmedMatchLine, 2)
 		Endif
 
@@ -364,7 +364,7 @@ Define Class GoFishSearchEngine As Custom
 		Endif
 
 		*-- Wrap MatchType in brackets (if not already set), and if it's not MATCHTYPE_CODE ...
-		If lcMatchType # MATCHTYPE_CODE And Left(lcMatchType, 1) # '<'
+		If Left(lcMatchType, 4) # MATCHTYPE_CODE And Left(lcMatchType, 1) # '<'
 			lcMatchType = '<' + lcMatchType + '>'
 		Endif
 
@@ -494,7 +494,7 @@ Define Class GoFishSearchEngine As Custom
 
 			Case lcMatchType = 'RESERVED8'
 				lcMatchType = MATCHTYPE_INCLUDE_FILE
-
+				
 			Otherwise
 				lcMatchType = toObject.MatchType && Restore it back
 
@@ -889,9 +889,9 @@ Define Class GoFishSearchEngine As Custom
 	Procedure CreateMenuDisplay(tcMenu)
 
 		#Define SPACING 3
-		#Define PREFIX '*'
+		#Define PREFIX ''
 
-		Local laLevels[1], lcPrompt, lcResult, lnLevel, lnSelect
+		Local laLevels[1], lcIndent, lcPrompt, lcResult, lnLevel, lnSelect
 
 		lnSelect = Select()
 		Select (tcMenu)
@@ -902,6 +902,7 @@ Define Class GoFishSearchEngine As Custom
 
 		Scan
 			This.aMenuStartPositions[Recno(tcmenu)] = Len(lcResult)
+			lcIndent = Replicate(Tab, m.lnLevel - 1)
 			Do Case
 				Case objCode = 22
 
@@ -913,14 +914,14 @@ Define Class GoFishSearchEngine As Custom
 					lnLevel	 = Ascan(m.laLevels, Trim(LevelName))
 
 				Case objCode = 0
-					lcResult = m.lcResult + PREFIX + Space(SPACING * m.lnLevel) + Strtran(m.lcPrompt, '\-', '-----') + CR
+					lcResult = m.lcResult + m.lcIndent + Strtran(m.lcPrompt, '\-', Replicate('-', 8)) + CR
 					lnLevel	 = m.lnLevel + 1
 					Dimension m.laLevels[m.lnLevel]
 					laLevels[m.lnLevel]	= Name
 
 				Otherwise
 					lnLevel	 = Ascan(m.laLevels, Trim(LevelName))
-					lcResult = m.lcResult + PREFIX + Space(SPACING * m.lnLevel) + Strtran(Prompt, '\-', '-----') + CR
+					lcResult = m.lcResult + m.lcIndent + Strtran(Prompt, '\-', Replicate('-', 8)) + CR 
 			Endcase
 		Endscan
 
@@ -1153,7 +1154,17 @@ Define Class GoFishSearchEngine As Custom
 		lnProcStart	 = &tcCursor..ProcStart
 		lnMatchStart = &tcCursor..MatchStart
 
-		If lcExt # 'PRG' And (Empty(m.lcMethod) Or 0 # Atc('<Property', m.lcMatchType))
+*!*	Changed by: nmpetkov 27.3.2023
+*!*	<pdm>
+*!*	<change date="{^2023-03-27,15:45:00}">Changed by: nmpetkov<br />
+*!*	Changes to  Highlight searched text in opened window #75
+*!*	</change>
+*!*	</pdm>
+*If lcExt # 'PRG' And (Empty(m.lcMethod) Or 0 # Atc('<Property', m.lcMatchType))
+* here any file that is a text file should be accepted to position the cursor when it is opened
+		If !Inlist(m.lcExt, 'PRG', 'SPR', 'MPR', 'QPR', 'H', 'INI', 'TXT', 'XML', 'HTM');
+				And (Empty(m.lcMethod) Or 0 # Atc('<Property', m.lcMatchType))
+*!*	/Changed by: nmpetkov 27.3.2023
 			lcMethodString = ''
 			lnStart		   = 1
 		Else
@@ -1227,11 +1238,121 @@ Define Class GoFishSearchEngine As Custom
 
 		m.loPBT.EditSourceX(m.lcFileToEdit, m.lcClass, m.lnStart, m.lnStart, m.lcMethodString, m.lnRecNo)
 
-		If m.tlMoveToTopleft AND (m.lcExt = 'PRG' Or Not Empty(m.lcMethodString))
+*!*	Changed by: nmpetkov 27.3.2023
+*!*	<pdm>
+*!*	<change date="{^2023-03-27,15:45:00}">Changed by: nmpetkov<br />
+*!*	Changes to  Highlight searched text in opened window #75
+*!*	</change>
+*!*	</pdm>
+		lcMatchType = Alltrim(&tcCursor..MatchType)
+*	Try to select searched text if found in normal windows only - exclude internal for VFP places
+		If !Inlist(m.lcMatchType, MATCHTYPE_FILENAME, MATCHTYPE_CLASS_DEF, MATCHTYPE_CLASS_DESC, MATCHTYPE_METHOD_DEF, MATCHTYPE_PROPERTY_DEF, ;
+				MATCHTYPE_CONTAINING_CLASS, MATCHTYPE_PARENTCLASS, MATCHTYPE_BASECLASS, MATCHTYPE_METHOD_DESC, MATCHTYPE_PROPERTY, ;
+				MATCHTYPE_PROPERTY_DESC, MATCHTYPE_PROPERTY_NAME, MATCHTYPE_PROPERTY_VALUE)
+			This.SelectSearchedText(&tcCursor..MatchStart,&tcCursor..MatchLen, This.oSearchOptions.cSearchExpression) 
+		Endif
+*!*	/Changed by: nmpetkov 27.3.2023
+
+		If m.tlMoveToTopleft And (m.lcExt = 'PRG' Or Not Empty(m.lcMethodString))
 			This.ThorMoveWindow()
 		Endif
 		
 	EndProc
+
+
+*----------------------------------------------------------------------------------
+*	Highlight searched text in opened window
+*		tnRangeStart - start of the line where the search is found
+*		tnRangelen - length of the line where the search is found - optional, can reduce the length of the text to be searched
+*		tcSearch - searched text
+*
+*nmpetkov 27.3.2023
+*----------------------------------------------------------------------------------
+	Procedure SelectSearchedText(tnRangeStart, tnRangelen, tcSearch)
+		Local;
+			lLibrRelease As Boolean,;
+			lcFoxtoolsFll As String,;
+			lcLine     As String,;
+			llMatchCase As Boolean,;
+			lnPos      As Number,;
+			lnRangeEnd As Number,;
+			lnRangeStart As Number,;
+			lnRetCode  As Number,;
+			lnSelEnd   As Number,;
+			lnSelStart As Number,;
+			lnWhandle  As Number,;
+			loMatch    As Object,;
+			loMatches  As Object
+
+		Local Array;
+			aEdEnv(25)
+
+		If Atc("foxtools.fll", Set("LIBRARY")) = 0
+			lcFoxtoolsFll = Sys(2004) + "foxtools.fll"
+			If File(m.lcFoxtoolsFll)
+				lLibrRelease = .T.
+				Set Library To (m.lcFoxtoolsFll) Additive
+			Endif
+		Endif
+
+		If Atc("foxtools.fll", Set("LIBRARY")) > 0
+			lnWhandle = _WOnTop()
+			lnRetCode = _EdGetEnv(m.lnWhandle, @aEdEnv) && aEdEnv: 1 - filename, 2 - size, 12 - readonly?, 17 - selected start, 18 selected  end
+			If m.lnRetCode = 1 And aEdEnv[2] > 0 && content size is > 0
+* determine the range in which to be searched
+				If aEdEnv[17] > 0 Or Empty(m.tnRangeStart) Or m.tnRangeStart >= aEdEnv[2]
+* defaults to current cursor position, if is set, otherwise the given as parameter
+*tnRangeStart = _EdGetPos(m.lnWhandle) && this value is allready available in aEdEnv
+					tnRangeStart = aEdEnv[17]
+				Endif
+				lnRangeStart = m.tnRangeStart
+				If Empty(m.tnRangelen)
+					tnRangelen = aEdEnv[2] - m.lnRangeStart + 1
+				Endif
+				lnRangeEnd = m.lnRangeStart + m.tnRangelen && determine where the search to be searched :-)
+				If m.lnRangeEnd > aEdEnv[2] && check we are not beyond the end, will throw error
+					lnRangeEnd = aEdEnv[2]
+				Endif
+				lcLine = _EdGetStr(m.lnWhandle, m.lnRangeStart, m.lnRangeEnd)
+* determine real string to search in case pattern or Regex
+				llMatchCase = This.oSearchOptions.lMatchCase
+				If This.oSearchOptions.nSearchMode > 1
+					This.PrepareRegExForSearch()
+					This.PrepareRegExForReplace()
+					loMatches = This.oRegExForSearch.Execute(m.lcLine)
+					If m.loMatches.Count > 0
+						loMatch     = loMatches.Item(0)
+						tcSearch    = m.loMatch.Value
+						llMatchCase = .T.
+					Endif
+				Endif
+* search what to be selected in the range
+				If m.llMatchCase
+					lnPos = At(m.tcSearch, m.lcLine)
+				Else
+					lnPos = Atc(m.tcSearch, m.lcLine)
+				Endif
+				If m.lnPos > 0
+					lnSelStart = m.lnRangeStart + m.lnPos - 1
+					lnSelEnd   = m.lnSelStart + Len(m.tcSearch)
+				Else
+* In case the search fails (match word or regular expressions), select whole the line
+					lnSelStart = m.tnRangeStart
+					lnSelEnd   = m.tnRangeStart + m.tnRangelen
+				Endif
+* select at the end
+				If m.lnSelEnd > m.lnSelStart
+					_EdSelect(m.lnWhandle, m.lnSelStart, m.lnSelEnd)
+				Endif
+			Endif
+		Endif
+
+		If m.lLibrRelease And Atc(m.lcFoxtoolsFll, Set("LIBRARY")) > 0
+			Release Library (m.lcFoxtoolsFll)
+		Endif
+	Endproc
+*!*	/Changed by: nmpetkov 27.3.2023
+
 
 
 	*----------------------------------------------------------------------------------
@@ -1856,7 +1977,43 @@ Define Class GoFishSearchEngine As Custom
 		
 	EndProc
 
-
+	*----------------------------------------------------------------------------------
+	Procedure GetFullMenuPrompt
+		* Assumes current record in current table; written this way to avoid modifying record pointer
+		Local laField[1], laParent[1], lcDBF, lcPrompt, lnLevelName, lnRecNo
+	
+		lcPrompt = Alltrim(Prompt)
+		lcDBF	 = Dbf()
+		lnRecNo	 = Recno()
+	
+		Select  LevelName,					;
+				Prompt						;
+			From (m.lcDBF)					;
+			Where Recno() = m.lnRecNo		;
+			Into Array laField
+	
+		Do While m.laField[1] # '_MSYSMENU'
+			lnLevelName = m.laField[1]
+			Select  Recno()										;
+				From (m.lcDBF)									;
+				Where objCode = 0								;
+					And Trim(Name) = Trim(m.lnLevelName)		;
+				Into Array laParent
+			If _Tally = 0
+				Exit
+			Endif
+			lnRecNo = m.laParent[1] - 1
+			Select  LevelName,					;
+					Prompt						;
+				From (m.lcDBF)					;
+				Where Recno() = m.lnRecNo		;
+				Into Array laField
+			lcPrompt = Alltrim(m.laField[2]) + ' => ' + m.lcPrompt
+		Enddo
+	
+		Return m.lcPrompt
+	Endproc
+	
 	*----------------------------------------------------------------------------------
 	Procedure GetProcedureStartPositions(tcCode, tcName)
 
@@ -3661,7 +3818,7 @@ Define Class GoFishSearchEngine As Custom
 			.FileType = Upper(Justext(tcFile))
 			.Timestamp = ldFileDate
 
-			.MatchLine = 'File name = "' + .FileName + '"'
+			.MatchLine = 'File name = [' + .FileName + ']'
 			.TrimmedMatchLine = .MatchLine
 		Endwith
 
@@ -3669,14 +3826,21 @@ Define Class GoFishSearchEngine As Custom
 		With loSearchResultObject
 			.UserField		  = loFileResultObject
 			.MatchType		  = MatchType_Filename
-			.MatchLine		  = 'File name = "' + loFileResultObject.FileName + '"'
-			.TrimmedMatchLine = 'File name = "' + loFileResultObject.FileName + '"'
+			.MatchLine		  = 'File name = [' + loFileResultObject.FileName + ']'
+			.TrimmedMatchLine = 'File name = [' + loFileResultObject.FileName + ']'
 		Endwith
 
-		If This.IsTextFile(tcFile)
-			loSearchResultObject.Code = Filetostr(tcFile)
-		Endif
+		*!* ******** JRN Removed 2024-01-05 ********
+		*!* If This.IsTextFile(tcFile)
+		*!* 	loSearchResultObject.Code = Filetostr(tcFile)
+		*!* Endif
 
+		If This.IsTextFile(tcFile)
+			loSearchResultObject.Code = loSearchResultObject.MatchLine 		;
+				+ Replicate('=', Max(Len(loSearchResultObject.MatchLine), 60)) + Chr[13]			;
+				+ Filetostr(tcFile)
+		Endif
+		
 		This.ProcessSearchResult(loSearchResultObject)
 
 		Select (lnSelect)
@@ -4082,6 +4246,13 @@ Define Class GoFishSearchEngine As Custom
 						Case m.lcExt = 'DBF'
 							.MatchType = '<Field>'
 							._Name	   = Proper(m.lcField)
+
+						Case m.lcExt = 'MNX' and InList(Upper(m.lcField), 'PROMPT', 'COMMAND', 'PROCEDURE', 'SKIPFOR')
+							lcCode = ;
+								Iif(Empty(Prompt), 	  '' , 'Prompt    = "' + This.GetFullMenuPrompt() + '"' + CRLF) + ;
+								Iif(Empty(Command),   '' , 'Command   = ' + Command + CRLF) + ;
+								Iif(Empty(Procedure), '' , 'Procedure = ' + Iif(CR $ Trim(Procedure, 1, CR, LF, Tab,' '), CRLF, '') + Procedure + CRLF) + ;
+								Iif(Empty(SkipFor),   '' , 'SkipFor   = ' + SkipFor + CRLF) 
 
 						Case m.lcExt = 'DBC'
 							._Name	= Alltrim(ObjectName)
@@ -4681,3 +4852,16 @@ Define Class GoFishSearchEngine As Custom
 
 EndDefine
    
+   
+*!*	Changed by: nmpetkov 27.3.2023
+*!*	<pdm>
+*!*	<change date="{^2023-03-27,15:45:00}">Changed by: nmpetkov<br />
+*!*	Changes to  Highlight searched text in opened window #75
+*!*	</change>
+*!*	</pdm>
+Function _WOnTop
+Function _EdGetEnv
+Function _EdGetStr
+Function _EdSelect
+Function _EDGETPOS
+*!*	/Changed by: nmpetkov 27.3.2023
