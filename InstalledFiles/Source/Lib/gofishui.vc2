@@ -3271,6 +3271,25 @@ DEFINE CLASS gf_progressbar AS container
 
 ENDDEFINE
 
+DEFINE CLASS gf_resultsform AS formset 
+ 	*< CLASSDATA: Baseclass="formset" Timestamp="" Scale="" Uniqueid="" />
+
+	*-- OBJECTDATA items order determines ZOrder / El orden de los items OBJECTDATA determina el ZOrder 
+	*< OBJECTDATA: ObjPath="Form1" UniqueID="" Timestamp="" />
+
+	#INCLUDE "..\..\..\..\..\programs\9.0\common\common.h"
+	*<PropValue>
+		Name = "gf_resultsform"
+	*</PropValue>
+
+	ADD OBJECT 'Form1' AS form WITH ;
+		Caption = "Form1", ;
+		DoCreate = .T., ;
+		Name = "Form1"
+		*< END OBJECT: BaseClass="form" />
+
+ENDDEFINE
+
 DEFINE CLASS gf_textboxcontainer AS gf_filtercheckboxcontainer OF "gofishui.vcx" 
  	*< CLASSDATA: Baseclass="container" Timestamp="" Scale="Pixels" Uniqueid="" />
 
