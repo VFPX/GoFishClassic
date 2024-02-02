@@ -122,7 +122,7 @@ Text to lcNote NoShow
 EndText
 
 AddProperty(toUpdateInfo, 'AvailableVersion', 'GoFishClassic - 5.2.01 - February 02, 2024 - 20240202')
-AddProperty(toUpdateInfo, 'SourceFileUrl', 'https://raw.githubusercontent.com/VFPX/GoFishClassic/master/Source/Source.zip')
+AddProperty(toUpdateInfo, 'SourceFileUrl', 'https://raw.githubusercontent.com/VFPX/GoFishClassic/master/InstalledFiles.zip')
 AddProperty(toUpdateInfo, 'LinkPrompt', 'GoFish Classic Home Page')
 AddProperty(toUpdateInfo, 'Link', 'https://github.com/VFPX/GoFishClassic')
 AddProperty(toUpdateInfo, 'Notes', lcNote)
