@@ -16,15 +16,15 @@ lcSourceLoc =  Addbs(Justpath(Sys(16))) && Change this to location of source fil
 Cd (lcSourceLoc)
 
 *== Most of these local variables will make their way into BuildGoFish.h
-lcVersion = '5.2'
-lcBuild = '01' && <---- Set your desired version level of the tool here
+lcVersion = Alltrim(FileToStr('VersionNumber.txt'), ' ', CHR[9], CHR[13], chr[10]) 
+lcBuild   = Alltrim(FileToStr('BuildNumber.txt'), ' ', CHR[9], CHR[13], chr[10]) 
 && This will be used on the GoFish form and will live on the
 && the _GoFish object that gets attached to _Screen at run time.
 
 lcApplicationName	= 'GoFishClassic'
 lcVersionLocalFile	= 'GoFishClassicVersionFile.txt'
 lcVersionFileURL	= 'https://github.com/VFPX/GoFishClassic/_GoFishClassicVersionFile.txt'
-lcDownloadUrl		= 'https://raw.githubusercontent.com/VFPX/GoFishClassic/master/InstalledFiles.zip'
+lcDownloadUrl		= 'https://raw.githubusercontent.com/VFPX/GoFishClassic/master/InstalledFiles/GoFishclassic.zip'
 lcGoFishHomePage	= 'https://github.com/VFPX/GoFishClassic'
 
 * This will appear as: '5.X.YYY' on the form, and in the cVersion property on the GoFishSeaerch Engine class
