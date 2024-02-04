@@ -1,3 +1,7 @@
+### GoFish Classic 5.2.02 - Released 2024-02-03
+
+* Added link to Issues page for GoFish Classic (at bottom left of main form).
+
 ### GoFish Classic 5.2.01 - Released 2024-02-02
 
 #### Enhancements
@@ -19,6 +23,8 @@
 #### Bug fixes
 * When the match is to a file name of a text file (such as a PRG), the Code View pane shows the text correctly.  Previously the beginning text was lost.
 * Highlighting (red box) around "Whole Word" now refreshes properly.
+
+***
 
 ### GoFish Classic 5.1.009 - Released 2023-09-30
 * Resurrected older version, now known as "GoFish Classic"

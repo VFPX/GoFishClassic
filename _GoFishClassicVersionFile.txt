@@ -1,6 +1,10 @@
 Lparameters toUpdateInfo
 
 Text to lcNote NoShow
+### GoFish Classic 5.2.02 - Released 2024-02-03
+
+* Added link to Issues page for GoFish Classic (at bottom left of main form).
+
 ### GoFish Classic 5.2.01 - Released 2024-02-02
 
 #### Enhancements
@@ -22,6 +26,8 @@ Text to lcNote NoShow
 #### Bug fixes
 * When the match is to a file name of a text file (such as a PRG), the Code View pane shows the text correctly.  Previously the beginning text was lost.
 * Highlighting (red box) around "Whole Word" now refreshes properly.
+
+***
 
 ### GoFish Classic 5.1.009 - Released 2023-09-30
 * Resurrected older version, now known as "GoFish Classic"
@@ -121,8 +127,8 @@ Text to lcNote NoShow
 
 EndText
 
-AddProperty(toUpdateInfo, 'AvailableVersion', 'GoFishClassic - 5.2.01 - February 02, 2024 - 20240202')
-AddProperty(toUpdateInfo, 'SourceFileUrl', 'https://raw.githubusercontent.com/VFPX/GoFishClassic/master/InstalledFiles.zip')
+AddProperty(toUpdateInfo, 'AvailableVersion', 'GoFishClassic - 5.2.02 - February 03, 2024 - 20240203')
+AddProperty(toUpdateInfo, 'SourceFileUrl', 'https://raw.githubusercontent.com/VFPX/GoFishClassic/master/InstalledFiles/GoFishclassic.zip')
 AddProperty(toUpdateInfo, 'LinkPrompt', 'GoFish Classic Home Page')
 AddProperty(toUpdateInfo, 'Link', 'https://github.com/VFPX/GoFishClassic')
 AddProperty(toUpdateInfo, 'Notes', lcNote)
